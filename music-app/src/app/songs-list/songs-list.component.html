@@ -1,1 +1,25 @@
 <p>songs-list works!</p>
+<button (click)="getData()" *ngIf="!data">GET Users</button>
+
+<h1>Music List</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" *ngFor="let item of data; let i = index">
+      <!-- <div *ngFor="let subItem of item[i]"> -->
+      <div class="card" style="width: 25rem">
+        <img src="{{ item.thumbNail }}" class="card-img-top" alt="..." />
+        <div>
+          <div class="card-body">
+            <h5 class="card-title">{{ item.songName }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              singers {{ item.singer[0] }} <br />
+              {{ item.singer[1] }}
+            </h6>
+
+            <p class="card-text">{{ item.movieName }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
