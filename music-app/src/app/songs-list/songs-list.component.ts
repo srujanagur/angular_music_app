@@ -13,12 +13,15 @@ export class SongsListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  data :any;
+  data: any;
+ 
   getData(){
     this.httpClient.get('http://localhost:3000/api/v1/songs').subscribe((data) => {
       this.data = data;
             console.log(data);
         });
-    }
+  }
+ 
+  
 
 }
