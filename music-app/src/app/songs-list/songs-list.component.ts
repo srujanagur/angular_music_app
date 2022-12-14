@@ -10,10 +10,11 @@ export class SongsListComponent implements OnInit {
 
   constructor(private httpClient: HttpClient) { }
   
-
+data: any;
   ngOnInit(): void {
+    this.getData()
   }
-  data: any;
+  
  
   getData(){
     this.httpClient.get('http://localhost:3000/api/v1/songs').subscribe((data) => {
